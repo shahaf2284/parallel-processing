@@ -1,3 +1,0 @@
-mpicc hw1.c -o a
-mpirun -np <number_of_processes> ./a
-
