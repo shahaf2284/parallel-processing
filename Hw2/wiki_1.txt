@@ -1,0 +1,18 @@
+הסבר 
+זוהי הפקודה העיקרית עבור Scalasca, כלי לניתוח ביצועים עבור תוכניות מקבילות. זה עוזר למשתמשים לנתח את הביצועים של יישומים מקבילים ולזהות צווארי בקבוק פוטנציאליים.
+
+scalasca -instrument mpicc -o cpi_scalasca ./hw1.c
+
+- instrument : אפשרות זו משמשת כדי לציין שהתוכנית צריכה להיות קשורה לניתוח ביצועים.
+- mpicc: הפקודה  משמשת לקמפל תוכניות C המשתמשות ב-MPI
+- o cpi_scalasca-: התוכנית לאחר הקומפילית תיקרא cpi_scalasca.
+
+__________________________________________________________
+scalasca -instrument mpicc -o cpi_scalasca ./hw1.c
+scalasca -analyze mpirun -np 2 ./cpi_scalasca
+ls -lt scorep_cpi_scalasca_2_sum
+scalasca -examine ./scorep_cpi_scalasca_2_sum
+__________________________________________________________
+jumpshot 
+tau2slog2 tau.trc tau.edf
+jumpshot ./tau.slog2
